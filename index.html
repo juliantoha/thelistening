@@ -24,10 +24,30 @@
   <meta property="og:image" content="[OG_IMAGE_URL]">
   <meta name="twitter:card" content="summary_large_image">
 
+  <link rel="canonical" href="[CANONICAL_URL]">
+
+  <!-- Gathering Nº 1 · fill [FIRST_GATHERING_DATE_ISO] as ISO 8601, e.g. 2026-09-17T20:00:00-07:00 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "The Listening · Gathering Nº 1",
+    "startDate": "[FIRST_GATHERING_DATE_ISO]",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "[NEIGHBORHOOD], Seattle",
+      "address": { "@type": "PostalAddress", "addressLocality": "Seattle", "addressRegion": "WA" }
+    },
+    "organizer": { "@type": "Organization", "name": "The Listening Co." },
+    "image": "[OG_IMAGE_URL]",
+    "description": "A members' club in Seattle. Live music in beautiful rooms, wine after, once a month. Invitation only."
+  }
+  </script>
+
   <meta name="theme-color" content="#14101A">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='7' fill='%23FF4633'/%3E%3C/svg%3E">
 
-  <link rel="preload" as="image" href="assets/hero-poster.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700;800&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
@@ -40,14 +60,19 @@
   <!-- Block 1 · Hero -->
   <header class="hero">
     <div class="hero-media" aria-hidden="true">
-      <video class="hero-video" muted autoplay loop playsinline poster="assets/hero-poster.webp" data-src="[HERO_VIDEO_URL]"></video>
+      <picture>
+        <source media="(max-width: 640px)" srcset="assets/hero-poster-mobile.webp">
+        <source media="(max-width: 1280px)" srcset="assets/hero-poster-1400.webp">
+        <img class="hero-poster" src="assets/hero-poster.webp" alt="" width="2000" height="1116" fetchpriority="high" decoding="async">
+      </picture>
+      <video class="hero-video" muted autoplay loop playsinline data-src="[HERO_VIDEO_URL]"></video>
     </div>
     <div class="hero-content">
       <p class="evidence kicker"><span class="dot" aria-hidden="true"></span>SEATTLE · MEMBERS &amp; GUESTS · EST. 2026</p>
       <h1 class="wordmark"><em class="the">the</em><span class="mark">LISTENING</span></h1>
       <p class="whisper tagline">Listen close. Stay late.</p>
       <p class="hero-line">Live music in rooms that were never built for it. Wine after. And the people you moved here hoping to meet.</p>
-      <p class="hero-cta"><a class="btn" href="#invite">REQUEST AN INVITATION</a></p>
+      <p class="hero-cta"><a class="btn" href="#invite" data-event="cta_hero">REQUEST AN INVITATION</a></p>
     </div>
   </header>
 
@@ -64,6 +89,10 @@
       <p class="whisper subline">A night.</p>
       <p>Seattle has plenty of places to go and not enough reasons to talk. So we made one. Once a month we take over a beautiful room: a loft, a gallery, a house with a grand piano, and put live music in it.</p>
       <p>Every night runs in two acts. The Set: thirty minutes, performers we book, close enough to hear the breathing. Phones down, lights low, one pour in hand.</p>
+      <figure class="night-photo">
+        <img src="assets/night-detail.webp" alt="Candles and glasses of red wine on a small table beside a tufted velvet chair, listeners soft in the background" width="800" height="600" loading="lazy" decoding="async">
+        <figcaption class="evidence">MUSIC IS THE REASON</figcaption>
+      </figure>
       <p>Then The After. The bottles open, the room loosens, and you are standing next to someone who just felt exactly what you felt. There is no better opening line. That is the club.</p>
     </section>
 
@@ -98,7 +127,13 @@
       <h2 id="invite-head" class="shout">GET IN</h2>
       <p class="whisper subline">Two sentences. Make them count.</p>
       <p>The last live music that gave you chills, and who sent you. If nobody sent you, make the two sentences count.</p>
-      <p class="invite-cta"><a class="cta-line" href="mailto:[RSVP_EMAIL]?subject=Invitation%20request%20%C2%B7%20The%20Listening">WRITE TO [RSVP_EMAIL]</a></p>
+      <p class="invite-cta">
+        <a class="cta-mail" href="mailto:[RSVP_EMAIL]?subject=Invitation%20request%20%C2%B7%20The%20Listening" data-event="cta_email">
+          <span class="evidence cta-lead">WRITE TO</span>
+          <span class="cta-address">[RSVP_EMAIL]</span>
+        </a>
+      </p>
+      <p class="invite-copy"><button class="copy-btn" type="button" data-email="[RSVP_EMAIL]" data-event="copy_email" aria-live="polite">COPY ADDRESS</button></p>
       <p class="whisper sign-off">Dress like you might meet someone.</p>
     </section>
   </main>
@@ -120,6 +155,37 @@
       if (v && src && src.indexOf('[') === -1 && motionOK && wide) {
         v.src = src;
       }
+
+      var btn = document.querySelector('.copy-btn');
+      if (btn) {
+        btn.addEventListener('click', function () {
+          var email = btn.getAttribute('data-email');
+          var done = function () {
+            btn.textContent = 'COPIED';
+            setTimeout(function () { btn.textContent = 'COPY ADDRESS'; }, 2000);
+          };
+          var fallback = function () {
+            var t = document.createElement('textarea');
+            t.value = email;
+            document.body.appendChild(t);
+            t.select();
+            try { if (document.execCommand('copy')) done(); } catch (e) {}
+            document.body.removeChild(t);
+          };
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(email).then(done, fallback);
+          } else {
+            fallback();
+          }
+        });
+      }
+
+      // Inert until the GA4 snippet in <head> is activated.
+      document.querySelectorAll('[data-event]').forEach(function (el) {
+        el.addEventListener('click', function () {
+          if (typeof gtag === 'function') gtag('event', el.getAttribute('data-event'));
+        });
+      });
     })();
   </script>
 </body>
