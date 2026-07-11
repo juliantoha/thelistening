@@ -64,6 +64,17 @@ body {
   color: var(--after-hours);
 }
 
+/* Film grain over everything: candlelight shot on film */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
 p {
   max-width: 58ch;
   text-wrap: pretty;
@@ -440,7 +451,13 @@ main section {
 
 .nights-section {
   max-width: none;
-  background: color-mix(in srgb, var(--rule) 60%, var(--after-hours));
+  background-color: color-mix(in srgb, var(--rule) 60%, var(--after-hours));
+  /* faint staff lines, like score paper */
+  background-image: repeating-linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--candlewax) 4%, transparent) 0 1px,
+    transparent 1px 28px
+  );
   border-top: 1px solid var(--rule);
   padding-top: 88px;
   padding-bottom: 88px;
@@ -578,7 +595,7 @@ main section {
 
 .rules {
   max-width: none;
-  background: color-mix(in srgb, var(--amaro) 14%, var(--after-hours));
+  background: color-mix(in srgb, var(--amaro) 18%, var(--after-hours));
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
   padding-top: 88px;
@@ -719,36 +736,6 @@ main section {
 
 .cta-mail:hover .cta-address {
   color: var(--on-air);
-}
-
-.invite-note {
-  font-size: 12px;
-  margin-top: 16px;
-}
-
-.invite-copy {
-  margin-top: 28px;
-}
-
-.copy-btn {
-  font-family: var(--evidence);
-  font-weight: 400;
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--smoke);
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 6px;
-  transition: color 0.2s ease;
-}
-
-.copy-btn:hover {
-  color: var(--candlewax);
 }
 
 .sign-off {

@@ -211,8 +211,6 @@
             <span class="cta-address">join@thelistening.co</span>
           </a>
         </p>
-        <p class="evidence invite-note">THE SUBJECT LINE IS PRE-FILLED</p>
-      <p class="invite-copy"><button class="copy-btn" type="button" data-email="join@thelistening.co" data-event="copy_email" aria-live="polite">COPY ADDRESS</button></p>
         <p class="whisper sign-off">Dress like you might meet someone.</p>
       </div>
       <figure class="invite-photo">
@@ -244,30 +242,6 @@
       var src = v && v.getAttribute('data-src');
       if (v && src && src.indexOf('[') === -1 && motionOK && wide) {
         v.src = src;
-      }
-
-      var btn = document.querySelector('.copy-btn');
-      if (btn) {
-        btn.addEventListener('click', function () {
-          var email = btn.getAttribute('data-email');
-          var done = function () {
-            btn.textContent = 'COPIED. MAKE THEM COUNT.';
-            setTimeout(function () { btn.textContent = 'COPY ADDRESS'; }, 2400);
-          };
-          var fallback = function () {
-            var t = document.createElement('textarea');
-            t.value = email;
-            document.body.appendChild(t);
-            t.select();
-            try { if (document.execCommand('copy')) done(); } catch (e) {}
-            document.body.removeChild(t);
-          };
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(email).then(done, fallback);
-          } else {
-            fallback();
-          }
-        });
       }
 
       var bar = document.querySelector('.stickybar');
