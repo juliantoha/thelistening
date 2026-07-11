@@ -68,6 +68,15 @@
 
   <!-- Block 1 · Hero -->
   <header class="hero">
+    <nav class="hero-nav" aria-label="Sections">
+      <span class="hero-nav-name"><span class="dot" aria-hidden="true"></span>THE LISTENING</span>
+      <ul class="hero-nav-links">
+        <li><a href="#night">THE NIGHT</a></li>
+        <li><a href="#nights">THE NIGHTS</a></li>
+        <li><a href="#rules">HOUSE RULES</a></li>
+        <li><a href="#invite">GET IN</a></li>
+      </ul>
+    </nav>
     <div class="hero-media" aria-hidden="true">
       <picture>
         <source media="(max-width: 640px)" srcset="assets/hero-poster-mobile.webp">
@@ -93,7 +102,8 @@
     </div>
 
     <!-- Block 3 · The Night -->
-    <section class="night" aria-labelledby="night-head">
+    <section class="night" id="night" aria-labelledby="night-head">
+      <p class="evidence section-index">01</p>
       <h2 id="night-head" class="shout">NOT A CONCERT.</h2>
       <p class="whisper subline">A night.</p>
       <p>Seattle has plenty of places to go and not enough reasons to talk. So we made one. Once a month we take over a beautiful room: a loft, a gallery, a house with a grand piano, and put live music in it.</p>
@@ -112,7 +122,8 @@
     </section>
 
     <!-- Block 4 · The Nights -->
-    <section class="nights-section" aria-labelledby="nights-head">
+    <section class="nights-section" id="nights" aria-labelledby="nights-head">
+      <p class="evidence section-index">02</p>
       <h2 id="nights-head" class="shout">THE NIGHTS</h2>
       <p class="whisper subline">A season, give or take.</p>
       <ul class="nights">
@@ -162,12 +173,17 @@
           <span class="evidence night-meta">MUSIC IN A MUSEUM AFTER THE DOORS LOCK</span>
         </li>
       </ul>
-      <p class="evidence gathering"><span class="dot" aria-hidden="true"></span>GATHERING Nº 1 · [FIRST_GATHERING_DATE] · [NEIGHBORHOOD], SEATTLE · ADDRESS SHARED WITH CONFIRMED GUESTS</p>
+      <div class="gathering-strip">
+        <p class="evidence gathering-cell"><span class="dot" aria-hidden="true"></span>GATHERING Nº 1</p>
+        <p class="evidence gathering-cell gathering-when">[FIRST_GATHERING_DATE] · [NEIGHBORHOOD], SEATTLE</p>
+        <p class="evidence gathering-cell gathering-note">ADDRESS SHARED WITH CONFIRMED GUESTS</p>
+      </div>
     </section>
 
     <!-- Block 5 · House Rules -->
     <section class="rules" aria-labelledby="rules-head">
       <div class="rules-inner">
+        <p class="evidence section-index">03</p>
         <h2 id="rules-head" class="shout">HOUSE RULES</h2>
         <p class="whisper subline">Four. That&rsquo;s all.</p>
         <p class="rules-intro">Rooms are capped at fifty. Members bring one guest, and everyone arrives on someone&rsquo;s word.</p>
@@ -193,6 +209,7 @@
     <!-- Block 6 · Get In -->
     <section class="invite" id="invite" aria-labelledby="invite-head">
       <div class="invite-body">
+        <p class="evidence section-index">04</p>
         <h2 id="invite-head" class="shout">GET IN</h2>
         <p class="whisper subline">Two sentences. Make them count.</p>
         <p>The last live music that gave you chills, and who sent you. If nobody sent you, make the two sentences count.</p>
@@ -214,10 +231,16 @@
 
   <!-- Block 7 · Footer -->
   <footer>
-    <p class="evidence">THE LISTENING CO. · SEATTLE</p>
-    <p class="evidence">HOSTED BY [HOST_NAME]</p>
-    <p class="evidence">EST. 2026</p>
-    <span class="dot dot--still" aria-hidden="true"></span>
+    <div class="footer-media" aria-hidden="true">
+      <img src="assets/footer-room.webp" alt="" width="1600" height="903" loading="lazy" decoding="async">
+    </div>
+    <div class="footer-inner">
+      <p class="whisper footer-tagline">Listen close. Stay late.</p>
+      <p class="evidence">THE LISTENING CO. · SEATTLE</p>
+      <p class="evidence">HOSTED BY [HOST_NAME]</p>
+      <p class="evidence">EST. 2026</p>
+      <span class="dot dot--still" aria-hidden="true"></span>
+    </div>
   </footer>
 
   <script>
