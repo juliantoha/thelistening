@@ -11,6 +11,7 @@
   --amaro:       #7A3140; /* depth only, 20% wash on hovered rows */
   --smoke:       #A79DA8; /* secondary text, metadata */
   --rule:        #2C2430; /* hairlines */
+  --lamplight:   #C9A24B; /* antique gold, the monogram only */
 
   --shout:    'Bricolage Grotesque', 'Arial Black', sans-serif;
   --whisper:  'Instrument Serif', 'Times New Roman', serif;
@@ -189,6 +190,23 @@ a {
 
 .stickybar-cta:hover {
   color: var(--on-air);
+}
+
+/* ---------- The monogram ---------- */
+
+.logo-mark {
+  display: inline-block;
+  flex: none;
+  width: 30px;
+  height: 30px;
+  margin-right: 12px;
+  color: var(--lamplight);
+}
+
+.logo-mark svg {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 /* ---------- The On Air Dot ---------- */
