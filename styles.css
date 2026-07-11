@@ -4,6 +4,40 @@
    Dark only.
    ============================================================ */
 
+/* ---------- Self-hosted faces (latin subsets) ---------- */
+
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('assets/fonts/bricolage.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('assets/fonts/plex-mono-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('assets/fonts/plex-mono-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('assets/fonts/instrument-serif-italic.woff2') format('woff2');
+}
+
 :root {
   --after-hours: #14101A; /* page background, image overlays */
   --candlewax:   #F1E9DB; /* primary text, wordmark, marquee */
@@ -819,6 +853,42 @@ footer .footer-mark {
   margin: 44px 0 0;
 }
 
+/* ---------- 404 · Wrong door ---------- */
+
+.notfound {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+}
+
+.notfound .logo-mark {
+  width: 52px;
+  height: 52px;
+  margin: 0 0 32px;
+}
+
+.nf-kicker {
+  color: var(--lamplight);
+}
+
+.nf-head {
+  margin-top: 16px;
+  font-size: clamp(44px, 9vw, 104px);
+}
+
+.nf-whisper {
+  margin-top: 16px;
+  color: var(--smoke);
+}
+
+.nf-cta {
+  margin-top: 48px;
+}
+
 /* ---------- Motion ---------- */
 
 @media (prefers-reduced-motion: no-preference) {
@@ -938,35 +1008,11 @@ footer .footer-mark {
   }
 
   .hero-nav {
-    padding: 0;
-  }
-
-  .hero-nav-name {
-    display: none;
+    padding: 20px;
   }
 
   .hero-nav-links {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    border-bottom: 1px solid color-mix(in srgb, var(--candlewax) 16%, transparent);
-  }
-
-  .hero-nav-links li:nth-child(odd) {
-    border-right: 1px solid color-mix(in srgb, var(--candlewax) 16%, transparent);
-  }
-
-  .hero-nav-links li:nth-child(-n+2) {
-    border-bottom: 1px solid color-mix(in srgb, var(--candlewax) 16%, transparent);
-  }
-
-  .hero-nav-links a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 8px;
-    white-space: nowrap;
+    display: none;
   }
 
   .night-duo .night-photo:nth-child(2) {
@@ -980,6 +1026,11 @@ footer .footer-mark {
 
   .night-duo {
     gap: 16px;
+  }
+
+  .night-photo img,
+  .invite-photo img {
+    padding: 7px;
   }
 
   .interlude {
