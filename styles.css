@@ -372,13 +372,30 @@ main section {
 }
 
 .night-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) auto;
+  align-items: center;
   gap: 24px;
   padding: 30px 12px;
   border-top: 1px solid var(--rule);
   transition: background-color 0.2s ease;
+}
+
+.night-icon {
+  width: 40px;
+  height: 40px;
+  color: var(--smoke);
+  transition: color 0.2s ease;
+}
+
+.night-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.night-row:hover .night-icon {
+  color: var(--on-air);
 }
 
 .night-row:last-child {
@@ -699,13 +716,19 @@ footer .dot {
   }
 
   .night-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+    grid-template-columns: 36px minmax(0, 1fr);
+    align-items: center;
+    gap: 8px 16px;
     padding: 20px 8px;
   }
 
+  .night-icon {
+    width: 32px;
+    height: 32px;
+  }
+
   .night-meta {
+    grid-column: 2;
     text-align: left;
   }
 
