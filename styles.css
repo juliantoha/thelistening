@@ -424,7 +424,16 @@ main section {
 }
 
 .nights-section {
+  max-width: none;
+  background: color-mix(in srgb, var(--rule) 60%, var(--after-hours));
+  border-top: 1px solid var(--rule);
+  padding-top: 88px;
+  padding-bottom: 88px;
+}
+
+.nights-inner {
   max-width: 900px;
+  margin-inline: auto;
 }
 
 .subline {
@@ -491,10 +500,23 @@ main section {
 }
 
 .night-icon {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   color: var(--smoke);
   transition: color 0.2s ease;
+}
+
+.night-icon--type {
+  font-family: var(--whisper);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 44px;
+  text-align: center;
+}
+
+.night-row {
+  border-color: color-mix(in srgb, var(--candlewax) 12%, transparent);
 }
 
 .night-icon svg {
@@ -533,33 +555,6 @@ main section {
   flex: none;
 }
 
-.gathering-strip {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  margin-top: 44px;
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-}
-
-.gathering-cell {
-  max-width: none;
-  padding: 18px 24px;
-  color: var(--candlewax);
-}
-
-.gathering-cell + .gathering-cell {
-  border-left: 1px solid var(--rule);
-}
-
-.gathering-when {
-  text-align: center;
-}
-
-.gathering-note {
-  color: var(--smoke);
-  text-align: right;
-}
 
 /* ---------- Block 5 · House Rules ---------- */
 
@@ -942,18 +937,9 @@ footer .dot {
     margin-top: 28px;
   }
 
-  .gathering-strip {
-    grid-template-columns: 1fr;
-  }
-
-  .gathering-cell + .gathering-cell {
-    border-left: none;
-    border-top: 1px solid var(--rule);
-  }
-
-  .gathering-when,
-  .gathering-note {
-    text-align: left;
+  .nights-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 
   .night-duo {
