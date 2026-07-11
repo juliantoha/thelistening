@@ -27,6 +27,7 @@
   <meta name="theme-color" content="#14101A">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='7' fill='%23FF4633'/%3E%3C/svg%3E">
 
+  <link rel="preload" as="image" href="assets/hero-poster.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700;800&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
@@ -39,7 +40,7 @@
   <!-- Block 1 · Hero -->
   <header class="hero">
     <div class="hero-media" aria-hidden="true">
-      <video class="hero-video" muted autoplay loop playsinline poster="[HERO_POSTER_URL]" data-src="[HERO_VIDEO_URL]"></video>
+      <video class="hero-video" muted autoplay loop playsinline poster="assets/hero-poster.webp" data-src="[HERO_VIDEO_URL]"></video>
     </div>
     <div class="hero-content">
       <p class="evidence kicker"><span class="dot" aria-hidden="true"></span>SEATTLE · MEMBERS &amp; GUESTS · EST. 2026</p>
@@ -115,8 +116,9 @@
       var v = document.querySelector('.hero-video');
       var motionOK = matchMedia('(prefers-reduced-motion: no-preference)').matches;
       var wide = matchMedia('(min-width: 641px)').matches;
-      if (v && motionOK && wide) {
-        v.src = v.getAttribute('data-src');
+      var src = v && v.getAttribute('data-src');
+      if (v && src && src.indexOf('[') === -1 && motionOK && wide) {
+        v.src = src;
       }
     })();
   </script>
