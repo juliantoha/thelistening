@@ -19,10 +19,14 @@
   <meta name="description" content="A members' club in Seattle. Live music in beautiful rooms, drinks after, once a month. Invitation only.">
 
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Listening">
   <meta property="og:title" content="The Listening · Listen close. Stay late.">
   <meta property="og:description" content="A members' club in Seattle. Live music in beautiful rooms, drinks after, once a month. Invitation only.">
-  <meta property="og:image" content="[OG_IMAGE_URL]">
+  <meta property="og:image" content="https://juliantoha.github.io/thelistening/assets/og-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://juliantoha.github.io/thelistening/assets/og-card.jpg">
 
   <link rel="canonical" href="[CANONICAL_URL]">
 
@@ -40,7 +44,7 @@
       "address": { "@type": "PostalAddress", "addressLocality": "Seattle", "addressRegion": "WA" }
     },
     "organizer": { "@type": "Organization", "name": "The Listening Co." },
-    "image": "[OG_IMAGE_URL]",
+    "image": "https://juliantoha.github.io/thelistening/assets/og-card.jpg",
     "description": "A members' club in Seattle. Live music in beautiful rooms, drinks after, once a month. Invitation only."
   }
   </script>
@@ -56,6 +60,11 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="stickybar" aria-label="Invitation">
+    <span class="stickybar-name"><span class="dot" aria-hidden="true"></span>THE LISTENING</span>
+    <a class="stickybar-cta" href="#invite" data-event="cta_sticky">REQUEST AN INVITATION</a>
+  </nav>
 
   <!-- Block 1 · Hero -->
   <header class="hero">
@@ -89,11 +98,17 @@
       <p class="whisper subline">A night.</p>
       <p>Seattle has plenty of places to go and not enough reasons to talk. So we made one. Once a month we take over a beautiful room: a loft, a gallery, a house with a grand piano, and put live music in it.</p>
       <p>Every night runs in two acts. The Set: thirty minutes, performers we book, close enough to hear the breathing. Phones down, lights low, one pour in hand.</p>
-      <figure class="night-photo">
-        <img src="assets/night-detail.webp" alt="Candles and glasses of red wine on a small table beside a tufted velvet chair, listeners soft in the background" width="800" height="600" loading="lazy" decoding="async">
-        <figcaption class="evidence">MUSIC IS THE REASON</figcaption>
-      </figure>
       <p>Then The After. The bottles open, the room loosens, and you are standing next to someone who just felt exactly what you felt. There is no better opening line. That is the club.</p>
+      <div class="night-duo">
+        <figure class="night-photo">
+          <img src="assets/set-performance.webp" alt="A violinist and a pianist performing close together by candlelight" width="960" height="1200" loading="lazy" decoding="async">
+          <figcaption class="evidence">THE SET</figcaption>
+        </figure>
+        <figure class="night-photo">
+          <img src="assets/night-detail.webp" alt="Candles and glasses of red wine on a small table, guests talking softly behind" width="880" height="1100" loading="lazy" decoding="async">
+          <figcaption class="evidence">THE AFTER</figcaption>
+        </figure>
+      </div>
     </section>
 
     <!-- Block 4 · The Nights -->
@@ -120,6 +135,11 @@
         <li><span class="evidence rule-num" aria-hidden="true">03</span><span class="rule-text">No name tags. No pitches. LinkedIn can wait until Monday.</span></li>
         <li><span class="evidence rule-num" aria-hidden="true">04</span><span class="rule-text">The room is off the record.</span></li>
       </ol>
+    </section>
+
+    <section class="interlude" aria-label="Strangers at eight. Not by ten.">
+      <p class="interlude-shout">STRANGERS AT EIGHT.</p>
+      <p class="whisper interlude-whisper">Not by ten.</p>
     </section>
 
     <!-- Block 6 · Get In -->
@@ -184,6 +204,14 @@
             fallback();
           }
         });
+      }
+
+      var bar = document.querySelector('.stickybar');
+      var hero = document.querySelector('.hero');
+      if (bar && hero && 'IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          bar.classList.toggle('stickybar--visible', !entries[0].isIntersecting);
+        }).observe(hero);
       }
 
       // Inert until the GA4 snippet in <head> is activated.
