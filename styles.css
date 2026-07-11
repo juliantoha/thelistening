@@ -11,7 +11,7 @@
   --amaro:       #7A3140; /* depth only, 20% wash on hovered rows */
   --smoke:       #A79DA8; /* secondary text, metadata */
   --rule:        #2C2430; /* hairlines */
-  --lamplight:   #C9A24B; /* antique gold, the monogram only */
+  --lamplight:   #C9A24B; /* antique gold: the monogram and gilded ornament */
 
   --shout:    'Bricolage Grotesque', 'Arial Black', sans-serif;
   --whisper:  'Instrument Serif', 'Times New Roman', serif;
@@ -285,7 +285,7 @@ a {
   align-items: center;
   gap: 14px;
   max-width: none;
-  color: var(--smoke);
+  color: var(--lamplight);
   margin-bottom: 20px;
 }
 
@@ -293,7 +293,7 @@ a {
   content: '';
   flex: 1;
   height: 1px;
-  background: var(--rule);
+  background: color-mix(in srgb, var(--lamplight) 30%, transparent);
 }
 
 .hero-media {
@@ -511,7 +511,7 @@ main section {
   width: 100%;
   height: auto;
   padding: 12px;
-  border: 1px solid var(--rule);
+  border: 1px solid color-mix(in srgb, var(--lamplight) 25%, transparent);
 }
 
 .night-photo figcaption {
@@ -525,7 +525,7 @@ main section {
   content: '';
   width: 22px;
   height: 1px;
-  background: var(--on-air);
+  background: var(--lamplight);
 }
 
 .night .subline + p,
@@ -554,7 +554,7 @@ main section {
 .night-icon {
   width: 44px;
   height: 44px;
-  color: var(--smoke);
+  color: var(--lamplight);
   transition: color 0.2s ease;
 }
 
@@ -643,6 +643,10 @@ main section {
   border-bottom: 1px solid var(--rule);
 }
 
+.rule-num {
+  color: var(--lamplight);
+}
+
 /* ---------- Interlude ---------- */
 
 .interlude {
@@ -716,7 +720,7 @@ main section {
   width: 100%;
   height: auto;
   padding: 12px;
-  border: 1px solid var(--rule);
+  border: 1px solid color-mix(in srgb, var(--lamplight) 25%, transparent);
 }
 
 .invite-photo figcaption {
@@ -747,13 +751,15 @@ main section {
   color: var(--candlewax);
   text-decoration: underline;
   text-decoration-thickness: 2px;
+  text-decoration-color: var(--lamplight);
   text-underline-offset: 9px;
   overflow-wrap: anywhere;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
 
 .cta-mail:hover .cta-address {
   color: var(--on-air);
+  text-decoration-color: var(--on-air);
 }
 
 .sign-off {
