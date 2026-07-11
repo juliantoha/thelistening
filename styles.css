@@ -29,6 +29,24 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: var(--rule) var(--after-hours);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--after-hours);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--rule);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--smoke);
 }
 
 body {
@@ -354,6 +372,8 @@ a {
   border-bottom: 1px solid var(--rule);
   padding: 16px 0;
   overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
 }
 
 .marquee-track {
@@ -559,18 +579,20 @@ main section {
 
 .rules-list {
   list-style: none;
-  margin-top: 32px;
+  margin-top: 40px;
 }
 
 .rules-list li {
   display: grid;
   grid-template-columns: 3ch 1fr;
-  column-gap: 20px;
+  column-gap: 24px;
   align-items: baseline;
+  padding: 20px 4px;
+  border-top: 1px solid var(--rule);
 }
 
-.rules-list li + li {
-  margin-top: 20px;
+.rules-list li:last-child {
+  border-bottom: 1px solid var(--rule);
 }
 
 /* ---------- Interlude ---------- */
