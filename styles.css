@@ -335,6 +335,19 @@ a {
   max-width: 46ch;
 }
 
+.hero-manifesto {
+  margin-top: 22px;
+  max-width: none;
+  color: var(--candlewax);
+}
+
+.hero-manifesto .sep {
+  color: var(--on-air);
+  font-size: 9px;
+  margin: 0 10px;
+  vertical-align: 15%;
+}
+
 .hero-cta {
   margin-top: 36px;
 }
@@ -822,11 +835,12 @@ footer .dot {
     animation: none;
   }
 
-  .kicker    { animation: rise 0.5s ease 0s both; }
-  .wordmark  { animation: rise 0.5s ease 0.2s both; }
-  .tagline   { animation: rise 0.5s ease 0.4s both; }
-  .hero-line { animation: rise 0.5s ease 0.4s both; }
-  .hero-cta  { animation: rise 0.5s ease 0.7s both; }
+  .kicker          { animation: rise 0.5s ease 0s both; }
+  .wordmark        { animation: rise 0.5s ease 0.2s both; }
+  .tagline         { animation: rise 0.5s ease 0.4s both; }
+  .hero-line       { animation: rise 0.5s ease 0.4s both; }
+  .hero-manifesto  { animation: rise 0.5s ease 0.55s both; }
+  .hero-cta        { animation: rise 0.5s ease 0.7s both; }
 
   .marquee-track {
     animation: ticker 30s linear infinite;
