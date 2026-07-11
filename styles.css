@@ -432,6 +432,20 @@ main section {
 
 /* ---------- Block 5 · House Rules ---------- */
 
+.rules {
+  max-width: none;
+  background: color-mix(in srgb, var(--amaro) 14%, var(--after-hours));
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding-top: 88px;
+  padding-bottom: 88px;
+}
+
+.rules-inner {
+  max-width: 720px;
+  margin-inline: auto;
+}
+
 .rules-list {
   list-style: none;
   margin-top: 32px;
@@ -701,6 +715,11 @@ footer .dot {
   .interlude {
     padding-top: 96px;
     padding-bottom: 96px;
+  }
+
+  .rules {
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 
   .evidence {
