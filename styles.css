@@ -434,11 +434,39 @@ main section {
 /* ---------- Interlude ---------- */
 
 .interlude {
+  position: relative;
   max-width: none;
   text-align: center;
-  padding-top: 88px;
-  padding-bottom: 88px;
+  padding-top: 140px;
+  padding-bottom: 140px;
   overflow: hidden;
+}
+
+.interlude-media {
+  position: absolute;
+  inset: 0;
+}
+
+.interlude-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.interlude-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--after-hours) 78%, transparent) 0%,
+    color-mix(in srgb, var(--after-hours) 58%, transparent) 50%,
+    color-mix(in srgb, var(--after-hours) 78%, transparent) 100%
+  );
+}
+
+.interlude-content {
+  position: relative;
 }
 
 .interlude-shout {
@@ -454,7 +482,7 @@ main section {
 .interlude-whisper {
   max-width: none;
   margin-top: 20px;
-  color: var(--smoke);
+  color: var(--candlewax);
 }
 
 /* ---------- Block 6 · Get In ---------- */
@@ -651,6 +679,11 @@ footer .dot {
 
   .night-duo {
     gap: 16px;
+  }
+
+  .interlude {
+    padding-top: 96px;
+    padding-bottom: 96px;
   }
 
   .evidence {
