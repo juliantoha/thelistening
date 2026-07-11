@@ -219,7 +219,8 @@
             <span class="cta-address">[RSVP_EMAIL]</span>
           </a>
         </p>
-        <p class="invite-copy"><button class="copy-btn" type="button" data-email="[RSVP_EMAIL]" data-event="copy_email" aria-live="polite">COPY ADDRESS</button></p>
+        <p class="evidence invite-note">THE SUBJECT LINE IS PRE-FILLED</p>
+      <p class="invite-copy"><button class="copy-btn" type="button" data-email="[RSVP_EMAIL]" data-event="copy_email" aria-live="polite">COPY ADDRESS</button></p>
         <p class="whisper sign-off">Dress like you might meet someone.</p>
       </div>
       <figure class="invite-photo">
@@ -258,8 +259,8 @@
         btn.addEventListener('click', function () {
           var email = btn.getAttribute('data-email');
           var done = function () {
-            btn.textContent = 'COPIED';
-            setTimeout(function () { btn.textContent = 'COPY ADDRESS'; }, 2000);
+            btn.textContent = 'COPIED. MAKE THEM COUNT.';
+            setTimeout(function () { btn.textContent = 'COPY ADDRESS'; }, 2400);
           };
           var fallback = function () {
             var t = document.createElement('textarea');
