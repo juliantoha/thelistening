@@ -146,9 +146,23 @@ p {
 
 /* ---------- Links, focus ---------- */
 
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
 a {
   color: var(--candlewax);
   transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+a:active {
+  color: var(--on-air);
+}
+
+.btn:active {
+  background: var(--candlewax);
+  color: var(--after-hours);
 }
 
 :focus-visible {
@@ -225,6 +239,9 @@ a {
   text-decoration-thickness: 1px;
   text-underline-offset: 5px;
   white-space: nowrap;
+  /* 44px hit area without growing the bar visually */
+  padding: 13px 0;
+  margin: -13px 0;
 }
 
 .stickybar-cta:hover {
@@ -996,6 +1013,31 @@ footer .footer-mark {
 
   .marquee-static {
     display: flex;
+  }
+}
+
+/* ---------- Landscape phones: clear the nav, tighten the stack ---------- */
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .hero .hero-content {
+    padding-top: 96px;
+  }
+
+  .wordmark {
+    font-size: 56px;
+    margin-top: 16px;
+  }
+
+  .tagline {
+    margin-top: 10px;
+  }
+
+  .hero-line {
+    margin-top: 20px;
+  }
+
+  .hero-cta {
+    margin-top: 32px;
   }
 }
 
