@@ -416,6 +416,11 @@ a {
   margin-top: 48px;
 }
 
+.cta-note {
+  font-size: 11px;
+  margin-top: 16px;
+}
+
 /* The page's one filled element */
 .btn {
   position: relative;
@@ -797,6 +802,11 @@ main section {
   text-decoration-color: var(--on-air);
 }
 
+.invite-human {
+  font-size: 12px;
+  margin-top: 16px;
+}
+
 .sign-off {
   margin-top: 44px;
   color: var(--smoke);
@@ -925,6 +935,7 @@ footer .footer-mark {
   .hero-line       { animation: rise 0.5s ease 0.4s both; }
   .hero-manifesto  { animation: rise 0.5s ease 0.55s both; }
   .hero-cta        { animation: rise 0.5s ease 0.7s both; }
+  .cta-note        { animation: rise 0.5s ease 0.8s both; }
 
   .marquee-track {
     animation: ticker 30s linear infinite;
@@ -999,12 +1010,26 @@ footer .footer-mark {
     font-size: 16px;
   }
 
+  /* Sticky action moves to the thumb zone on phones */
   .stickybar {
-    padding: 12px 20px;
+    top: auto;
+    bottom: 0;
+    border-bottom: none;
+    border-top: 1px solid var(--rule);
+    transform: translateY(100%);
+    padding: 12px 20px calc(12px + env(safe-area-inset-bottom));
   }
 
-  .stickybar-name {
-    font-size: 13px;
+  .stickybar--visible {
+    transform: none;
+  }
+
+  .stickybar-label {
+    display: none;
+  }
+
+  .stickybar-name .logo-mark {
+    margin-right: 0;
   }
 
   .hero-nav {
