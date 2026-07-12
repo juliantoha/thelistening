@@ -4,16 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!--
-  Analytics · GA4 · deferred. Uncomment and replace the placeholder to activate.
-  <script async src="https://www.googletagmanager.com/gtag/js?id=[GA4_MEASUREMENT_ID]"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '[GA4_MEASUREMENT_ID]');
-  </script>
-  -->
+  <!-- No analytics by design. The footer promises no cookies and no
+       trackers; keep that promise. Conversions are measured where they
+       land: the join@thelistening.co inbox. -->
 
   <title>The Listening · Listen close. Stay late.</title>
   <meta name="description" content="A members' club in Seattle. Live music in rooms that were never built for it, drinks after, once a month. Invitation only.">
@@ -99,7 +92,7 @@
         </svg>
       </span>
       <span class="stickybar-label">THE LISTENING</span></span>
-    <a class="stickybar-cta" href="#invite" data-event="cta_sticky">REQUEST AN INVITATION</a>
+    <a class="stickybar-cta" href="#invite">REQUEST AN INVITATION</a>
   </nav>
 
   <!-- Block 1 · Hero -->
@@ -139,7 +132,7 @@
       <p class="whisper tagline">Listen close. Stay late.</p>
       <p class="hero-line">Live music in rooms that were never built for it. Drinks after. And the people you&rsquo;ve been hoping to meet.</p>
       <p class="evidence hero-manifesto">NO PROFILES <span class="sep" aria-hidden="true">●</span> NO OPENERS <span class="sep" aria-hidden="true">●</span> NO STRANGERS BY TEN</p>
-      <p class="hero-cta"><a class="btn" href="#invite" data-event="cta_hero">REQUEST AN INVITATION</a></p>
+      <p class="hero-cta"><a class="btn" href="#invite">REQUEST AN INVITATION</a></p>
       <p class="evidence cta-note">A TWO-SENTENCE EMAIL. THAT&rsquo;S THE WHOLE ASK.</p>
     </div>
   </header>
@@ -255,12 +248,13 @@
         <p class="whisper subline">Two sentences. Make them count.</p>
         <p>The last live music that gave you chills, and who sent you. If nobody sent you, make it impossible to say no.</p>
         <p class="invite-cta">
-          <a class="cta-mail" href="mailto:join@thelistening.co?subject=Invitation%20request%20%C2%B7%20The%20Listening" data-event="cta_email">
+          <a class="cta-mail" href="mailto:join@thelistening.co?subject=Invitation%20request%20%C2%B7%20The%20Listening">
             <span class="evidence cta-lead">WRITE TO</span>
             <span class="cta-address">join@thelistening.co</span>
           </a>
         </p>
         <p class="evidence invite-human">GOES STRAIGHT TO CHO · NOT A LIST</p>
+      <p class="evidence invite-human">ADDRESS SHARED WITH CONFIRMED GUESTS</p>
       <p class="whisper sign-off">Dress like you might meet someone.</p>
       </div>
       <figure class="invite-photo">
@@ -277,9 +271,10 @@
     </div>
     <div class="footer-inner">
       <p class="whisper footer-tagline">Listen close. Stay late.</p>
-      <p class="evidence">THE LISTENING CO. · SEATTLE</p>
+      <p class="evidence">&copy; THE LISTENING CO. · SEATTLE</p>
       <p class="evidence">HOSTED BY CHO</p>
       <p class="evidence">EST. 2026</p>
+      <p class="evidence footer-promise">NO COOKIES · NO TRACKERS · EMAILS GO TO A PERSON</p>
       <span class="logo-mark footer-mark" aria-hidden="true">
         <svg viewBox="0 0 100 100" fill="none" stroke="currentColor">
           <circle cx="50" cy="50" r="45.5" stroke-width="6"/>
@@ -311,13 +306,6 @@
           bar.classList.toggle('stickybar--visible', !entries[0].isIntersecting);
         }).observe(hero);
       }
-
-      // Inert until the GA4 snippet in <head> is activated.
-      document.querySelectorAll('[data-event]').forEach(function (el) {
-        el.addEventListener('click', function () {
-          if (typeof gtag === 'function') gtag('event', el.getAttribute('data-event'));
-        });
-      });
     })();
   </script>
 </body>

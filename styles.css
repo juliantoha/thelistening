@@ -832,6 +832,10 @@ main section {
   margin-top: 16px;
 }
 
+.invite-human + .invite-human {
+  margin-top: 8px;
+}
+
 .sign-off {
   margin-top: 44px;
   color: var(--smoke);
@@ -880,6 +884,11 @@ footer p {
 
 footer p + p {
   margin-top: 10px;
+}
+
+footer .footer-promise {
+  margin-top: 28px;
+  font-size: 11px;
 }
 
 footer .footer-mark {
