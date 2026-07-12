@@ -1,0 +1,13 @@
+{
+  "name": "The Listening",
+  "short_name": "The Listening",
+  "description": "A members' club in Seattle. Live music in rooms that were never built for it, drinks after, once a month. Invitation only.",
+  "start_url": "/thelistening/",
+  "display": "browser",
+  "background_color": "#14101A",
+  "theme_color": "#14101A",
+  "icons": [
+    { "src": "assets/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "assets/monogram-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
