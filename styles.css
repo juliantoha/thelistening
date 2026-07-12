@@ -264,6 +264,7 @@ a {
 
 .hero {
   position: relative;
+  min-height: 100vh;
   min-height: 100svh;
   display: flex;
   align-items: flex-end;
@@ -514,6 +515,7 @@ main section {
 
 .nights-section {
   max-width: none;
+  background-color: #221C27; /* fallback for pre-color-mix browsers */
   background-color: color-mix(in srgb, var(--rule) 60%, var(--after-hours));
   /* faint staff lines, like score paper */
   background-image: repeating-linear-gradient(
@@ -658,6 +660,7 @@ main section {
 
 .rules {
   max-width: none;
+  background: #261621; /* fallback for pre-color-mix browsers */
   background: color-mix(in srgb, var(--amaro) 18%, var(--after-hours));
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
@@ -871,6 +874,7 @@ footer .footer-mark {
 /* ---------- 404 · Wrong door ---------- */
 
 .notfound {
+  min-height: 100vh;
   min-height: 100svh;
   display: flex;
   flex-direction: column;

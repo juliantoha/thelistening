@@ -19,6 +19,7 @@
   <meta name="description" content="A members' club in Seattle. Live music in beautiful rooms, drinks after, once a month. Invitation only.">
 
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://juliantoha.github.io/thelistening/">
   <meta property="og:site_name" content="The Listening">
   <meta property="og:title" content="The Listening · Listen close. Stay late.">
   <meta property="og:description" content="A members' club in Seattle. Live music in beautiful rooms, drinks after, once a month. Invitation only.">
@@ -30,9 +31,23 @@
   <meta name="twitter:image" content="https://juliantoha.github.io/thelistening/assets/og-card.jpg">
   <meta name="twitter:image:alt" content="A violinist and pianist perform by candlelight beneath The Listening's gold monogram. Listen close. Stay late.">
 
-  <link rel="canonical" href="[CANONICAL_URL]">
+  <link rel="canonical" href="https://juliantoha.github.io/thelistening/">
 
-  <!-- Gathering Nº 1 · fill [FIRST_GATHERING_DATE_ISO] as ISO 8601, e.g. 2026-09-17T20:00:00-07:00 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "The Listening Co.",
+    "url": "https://juliantoha.github.io/thelistening/",
+    "logo": "https://juliantoha.github.io/thelistening/assets/monogram-512.png",
+    "email": "join@thelistening.co",
+    "description": "A members' club in Seattle. Live music in beautiful rooms, drinks after, once a month. Invitation only.",
+    "address": { "@type": "PostalAddress", "addressLocality": "Seattle", "addressRegion": "WA" }
+  }
+  </script>
+
+  <!-- Event schema template · restore once the first gathering has a real
+       ISO 8601 date (e.g. 2026-09-17T20:00:00-07:00) and a neighborhood:
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -50,9 +65,12 @@
     "description": "A members' club in Seattle. Live music in beautiful rooms, drinks after, once a month. Invitation only."
   }
   </script>
+  -->
+
 
   <meta name="theme-color" content="#14101A">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%23C9A24B'%3E%3Ccircle cx='50' cy='50' r='44' stroke-width='8'/%3E%3Cpath d='M46 10V70H94' stroke-width='7'/%3E%3Cpath d='M32 12V84H88' stroke-width='7'/%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/bricolage.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/instrument-serif-italic.woff2" crossorigin>
