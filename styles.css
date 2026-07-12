@@ -156,6 +156,11 @@ a {
   outline-offset: 3px;
 }
 
+/* The one red element needs a non-red ring */
+.btn:focus-visible {
+  outline-color: var(--candlewax);
+}
+
 .skip-link {
   position: absolute;
   left: 50%;
@@ -961,6 +966,27 @@ footer .footer-mark {
 
   .marquee-static {
     display: flex;
+  }
+}
+
+/* ---------- Low-vision accommodation ---------- */
+
+@media (prefers-contrast: more) {
+  :root {
+    --smoke: color-mix(in srgb, var(--candlewax) 60%, #A79DA8);
+  }
+
+  body::after {
+    display: none; /* grain is noise when you have asked for clarity */
+  }
+
+  .section-index::after,
+  .night-row,
+  .rules-list li,
+  .rules-list li:last-child,
+  .night-photo img,
+  .invite-photo img {
+    border-color: var(--smoke);
   }
 }
 
