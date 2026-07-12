@@ -384,7 +384,7 @@ a:active {
   position: relative;
   z-index: 1;
   width: 100%;
-  padding: 48px;
+  padding: 48px 48px 60px;
 }
 
 .kicker {
@@ -422,7 +422,7 @@ a:active {
 }
 
 .hero-manifesto {
-  margin-top: 14px;
+  margin-top: 22px;
   max-width: none;
   letter-spacing: 0.12em;
   color: var(--candlewax);
@@ -846,11 +846,15 @@ main section {
 
 .invite-human {
   font-size: 12px;
-  margin-top: 16px;
+  margin-top: 14px;
+}
+
+.invite-human--lead {
+  color: var(--candlewax);
 }
 
 .invite-human + .invite-human {
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 .sign-off {
