@@ -507,6 +507,23 @@ a {
 
 /* ---------- Shared section layout ---------- */
 
+/* Below-fold sections skip render work until approached */
+.night,
+.nights-section,
+.rules,
+.interlude,
+.invite,
+footer {
+  content-visibility: auto;
+}
+
+.night { contain-intrinsic-size: auto 1600px; }
+.nights-section { contain-intrinsic-size: auto 950px; }
+.rules { contain-intrinsic-size: auto 750px; }
+.interlude { contain-intrinsic-size: auto 500px; }
+.invite { contain-intrinsic-size: auto 850px; }
+footer { contain-intrinsic-size: auto 480px; }
+
 main section {
   max-width: 720px;
   margin-inline: auto;
