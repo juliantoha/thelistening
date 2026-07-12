@@ -824,6 +824,7 @@ main section {
 
 .cta-address {
   display: inline-block;
+  user-select: all; /* a drag or triple-click grabs the whole address */
   margin-top: 12px;
   font-family: var(--shout);
   font-weight: 700;
